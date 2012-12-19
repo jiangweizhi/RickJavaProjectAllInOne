@@ -31,6 +31,7 @@ public class GetWebContent {
 			//System.out.println(doc.html());  
 			//System.out.println(doc.getElementById("content_area").html());
 			Element eles = doc.getElementById("content_area");
+			System.out.println(eles.html());
 			
 			//Below code is for the multiple link page
 			//Elements eles2 = eles.getElementsByAttributeValue("style", "text-align: center;");
