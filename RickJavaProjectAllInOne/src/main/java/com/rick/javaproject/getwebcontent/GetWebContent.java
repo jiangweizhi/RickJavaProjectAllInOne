@@ -19,7 +19,11 @@ public class GetWebContent {
 	}
 
 	private static void go2(){
-		String concreateURL = "http://www.yixinhealth.com/%E5%8C%96%E9%AA%8C%E5%92%8C%E6%A3%80%E6%9F%A5/%E5%BF%83%E7%94%B5%E5%9B%BE/";  
+		//Below link is for the multiple link page: total 5page
+		//String concreateURL = "http://www.yixinhealth.com/%E5%8C%96%E9%AA%8C%E5%92%8C%E6%A3%80%E6%9F%A5/%E5%BF%83%E7%94%B5%E5%9B%BE/";  
+		
+		//Below link is for multiple title content page: total 3 titles 
+		String concreateURL = "http://www.yixinhealth.com/%E5%8C%96%E9%AA%8C%E5%92%8C%E6%A3%80%E6%9F%A5/%E5%BF%83%E7%94%B5%E5%9B%BE/"; 
 		Connection c = Jsoup.connect(concreateURL); 
 		c.timeout(10000);
 		try {
@@ -27,8 +31,20 @@ public class GetWebContent {
 			//System.out.println(doc.html());  
 			//System.out.println(doc.getElementById("content_area").html());
 			Element eles = doc.getElementById("content_area");
-			Elements eles2 = eles.getElementsByAttributeValue("style", "text-align: center;");
-			System.out.println(eles2.html());
+			
+			//Below code is for the multiple link page
+			//Elements eles2 = eles.getElementsByAttributeValue("style", "text-align: center;");
+			//System.out.println(eles2.html());
+			/*for(Element ele: eles2){
+				Elements link = ele.getElementsByTag("a");
+				//System.out.println(link.html());
+				for (int i=0;i<link.size();i++) {
+					System.out.println(link.get(i).attr("href"));
+				}
+			}*/
+			
+			
+			//System.out.println(eles2.html());
 			/*Element eles = doc.getElementById("content_area");
 			Elements eles2 = eles.getElementsByTag("img");
 			System.out.println(eles2.size());
