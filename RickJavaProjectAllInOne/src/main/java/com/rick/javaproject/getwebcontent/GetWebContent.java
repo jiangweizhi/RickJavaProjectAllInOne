@@ -30,8 +30,8 @@ public class GetWebContent {
 			Document doc = c.get();
 			//System.out.println(doc.html());  
 			//System.out.println(doc.getElementById("content_area").html());
-			Element eles = doc.getElementById("content_area");
-			System.out.println(eles.html());
+			//Element eles = doc.getElementById("content_area");
+			//System.out.println(eles.html());
 			
 			//Below code is for the multiple link page
 			//Elements eles2 = eles.getElementsByAttributeValue("style", "text-align: center;");
@@ -46,10 +46,27 @@ public class GetWebContent {
 			
 			
 			//System.out.println(eles2.html());
-			/*Element eles = doc.getElementById("content_area");
+			Element eles = doc.getElementById("content_area");
 			Elements eles2 = eles.getElementsByTag("img");
-			System.out.println(eles2.size());
-			System.out.println(eles2.get(0).attr("src"));*/
+			for(int i=0;i<eles2.size();i++){
+				eles2.get(i).parent().attr("style", "text-align:center");
+				eles2.get(i).parent().parent().nextElementSibling().attr("style", "text-align:center");
+				eles2.get(i).attr("style", "width:50%");
+			}
+			
+			Elements eles3 = eles.getElementsByClass("j-header");
+			for (Element ele : eles3) {
+				Elements eleHeader = ele.getElementsByTag("h2");
+				eleHeader.attr("style", "text-align:center");
+			}
+			System.out.println(eles.html());
+			//Elements eles3 = eles.getElementsByClass("n*j-imageSubtitle");
+			//System.out.println(eles3.size());
+			/*for(int i=0;i<eles3.size();i++){
+				eles3.get(i).attr("style", "text-align:center;width:50%");
+			}
+			System.out.println(eles.html());*/
+			//System.out.println(eles2.get(0).attr("src"));
 			/*Element eles = doc.getElementById("content_area");
 			Elements eles2 = eles.getElementsByClass("j-header");
 			for (Element ele : eles2) {
