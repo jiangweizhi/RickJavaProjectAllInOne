@@ -60,6 +60,11 @@ public class GetWebContent {
 				eleHeader.attr("style", "text-align:center");
 			}
 			System.out.println(eles.html());
+			
+			//Below code is help to clear out the share icon to like Sina weibo
+			Elements eles4 = eles.getElementsByClass("bshare-custom");
+			//eles4.remove();
+			
 			//Elements eles3 = eles.getElementsByClass("n*j-imageSubtitle");
 			//System.out.println(eles3.size());
 			/*for(int i=0;i<eles3.size();i++){
