@@ -19,8 +19,8 @@ public class Test3 {
 	 * @param args
 	 */
 	public static void main(String[] args) throws Exception {
-		String pdfFile = "d:/test6666.pdf";
-		String htmlFile = "d:/baidu.htm";
+		String pdfFile = "d:/test9999999.pdf";
+		String htmlFile = "d:/rick1314.html";
 
 		Document document = new Document();
 		PdfWriter pdfwriter = PdfWriter.getInstance(document, new FileOutputStream(pdfFile));
